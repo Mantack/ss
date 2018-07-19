@@ -20,10 +20,7 @@ public class BookController {
     @GetMapping("")
     public String main(Map<String, Object> model) {
         model.put("book", bookRepo.findAll());
-        model.put("id","");
-        model.put("title","");
-        model.put("author","");
-        return "book";
+        return "upd";
     }
 
 
@@ -35,10 +32,7 @@ public class BookController {
         book1.setAuthor(author);
         bookRepo.save(book1);
         model.put("book", bookRepo.findAll());
-        model.put("id","");
-        model.put("title","");
-        model.put("author","");
-        return "book";
+        return "upd";
     }
 
     @GetMapping("update")
@@ -51,7 +45,7 @@ public class BookController {
 
         bookRepo.save(book);
         model.put("book", bookRepo.findAll());
-        return "book";
+        return "update";
     }
 
     @PostMapping("update")
@@ -61,19 +55,13 @@ public class BookController {
         book.setAuthor(author);
         bookRepo.save(book);
         model.put("book", bookRepo.findAll());
-        model.put("id","");
-        model.put("title","");
-        model.put("author","");
-        return "book";
+              return "book";
     }
 
     @GetMapping("delete")
     public String delete(@RequestParam Long id, Map<String, Object> model) {
         bookRepo.deleteById(id);
         model.put("book", bookRepo.findAll());
-        model.put("id","");
-        model.put("title","");
-        model.put("author","");
         return "book";
     }
 
@@ -81,9 +69,6 @@ public class BookController {
     public String delete2(@RequestParam Long id, Map<String, Object> model) {
         bookRepo.deleteById(id);
         model.put("book", bookRepo.findAll());
-        model.put("id","");
-        model.put("title","");
-        model.put("author","");
         return "book";
     }
 //    @PostMapping("delete")

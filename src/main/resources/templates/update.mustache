@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    <a href="/">MAIN</a>
+<div>
+
+    <form action="/update" method="post">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="text" name="title" value="{{title}}" placeholder="Название книги" />
+        <input type="text" name="author" value="{{author}}" placeholder="Автор">
+        <button type="submit" >UPDATE</button>
+    </form>
+</div>
+
+
+
+
+
+<div>Редактировать книги</div>
+
+
+{{#book}}
+    <table>
+        <tr>
+            <th>{{id}}</th>
+            <th>{{title}}</th>
+            <th>{{author}}</th>
+
+
+        </tr>
+    </table>
+{{/book}}
+
+</body>
+</html>
