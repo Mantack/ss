@@ -48,14 +48,14 @@ public class BookController {
         return "update";
     }
 
-    @PostMapping("update")
+    @PostMapping("")
     public String update(@RequestParam Long id, @RequestParam String title, @RequestParam String author, Map<String, Object> model) {
         Book book = bookRepo.findById(id).get();
         book.setTitle(title);
         book.setAuthor(author);
         bookRepo.save(book);
         model.put("book", bookRepo.findAll());
-              return "book";
+               return "upd";
     }
 
     @GetMapping("delete")
@@ -65,11 +65,11 @@ public class BookController {
         return "book";
     }
 
-    @PostMapping("delete2")
+    @PostMapping("delete")
     public String delete2(@RequestParam Long id, Map<String, Object> model) {
         bookRepo.deleteById(id);
         model.put("book", bookRepo.findAll());
-        return "book";
+        return "upd";
     }
 //    @PostMapping("delete")
 //    public String delete( Map<String, Object> model){

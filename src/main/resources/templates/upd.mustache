@@ -67,10 +67,10 @@
                 <td>{{author}}</td>
                 <td>${book.price/100}${book.price%100}</td>
 
-            <th><a href="/update?id={{id}}">UPDATE</a></th>
-                <td><a href="<c:url value='/remove/${book.id}'/>">Delete</a></td>
+            <td><a href="/update?id={{id}}">UPDATE</a></td>
+            <td><form action="/delete" method="post"><input type="hidden" name="id" value="{{id}}"><input type="submit" value="DELETE"/></form></th>
         </tr>
-    {{/book}}book}}
+    {{/book}}
     </table>
 
 
