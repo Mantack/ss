@@ -58,6 +58,7 @@
             <th width="120">Price</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
+
         </tr>
 {{#book}}
         <tr>
@@ -66,6 +67,7 @@
                 <td>{{title}}</td>
                 <td>{{author}}</td>
                 <td>${book.price/100}${book.price%100}</td>
+
 
             <td><a href="/update?id={{id}}">UPDATE</a></td>
             <td><form action="/delete" method="post"><input type="hidden" name="id" value="{{id}}"><input type="submit" value="DELETE"/></form></th>
